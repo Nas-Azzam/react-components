@@ -4,7 +4,7 @@
 
 #### useState
 
-1. Birthday Reminder
+1. Birthday Reminder (Project)
 
 #### useEffect and Conditional Rendering
 

@@ -1,20 +1,24 @@
 import React from 'react'
 import { data } from '../../../data'
-
 const UseStateArray = () => {
-  const [perople, setpeople] = React.useState(data)
+  const [people, setPeople] = React.useState(data)
+
+  const removeItem = (id) => {
+    let newPeople = people.filter((person) => person.id !== id)
+    setPeople(newPeople)
+  }
   return (
     <>
-      {perople.map((person) => {
+      {people.map((person) => {
         const { id, name } = person
-
         return (
           <div key={id} className='item'>
-            <h3>{name}</h3>
+            <h4>{name}</h4>
+            <button onClick={() => removeItem(id)}>remove</button>
           </div>
         )
       })}
-      <button className='btn' onClick={() => setpeople([])}>
+      <button className='btn' onClick={() => setPeople([])}>
         clear items
       </button>
     </>
