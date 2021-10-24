@@ -8,7 +8,10 @@ const UseEffectBasics = () => {
 
   useEffect(() => {
     console.log('usee effect')
-  })
+    if (value >= 1) {
+      document.title = `New Title (${value})`
+    }
+  }, [value])
 
   return (
     <>
